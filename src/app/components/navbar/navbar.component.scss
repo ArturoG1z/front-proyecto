@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital@1&display=swap");
+@import "../../../styles.scss";
+
+header {
+	background: $main-color;
+	width: 100%;
+	position: sticky;
+	z-index: 20;
+	top: 0;
+	.main-navbar {
+		min-height: 5rem;
+		display: grid;
+		margin: 0 6rem;
+		// grid-template-columns: 40% 10%;
+		.title {
+			margin: 0 1.25rem;
+			display: flex;
+			align-items: center;
+			a {
+				img {
+					margin: 0.5rem 0.5rem 0;
+					width: 2.5rem;
+					cursor: pointer;
+				}
+				color: $second-color;
+				text-decoration: none !important;
+				span {
+					color: white;
+				}
+			}
+		}
+		.menu {
+			margin: 0 1.25rem;
+			display: flex;
+			list-style: none;
+			animation-duration: 0.3s;
+			transition: all 0.3s ease-in-out;
+			grid-column: 3/4;
+			justify-content: flex-end;
+			align-items: center;
+			.submenu {
+				display: flex;
+				height: 100%;
+				align-items: center;
+				a {
+					display: flex;
+					height: 100%;
+					align-items: center;
+					padding: 0 1.2rem;
+					font-weight: bold;
+					text-decoration: none;
+					color: $white-color;
+					img{
+						margin: 0 0.5rem;
+						width: 1.5rem;
+					}
+					.button {
+						padding: 10px 12px;
+						border-radius: 3px;
+						background-color: $second-color;
+						color: $main-color-dark;
+						border-bottom: 2px outset $second-color-dark;
+						border-right: 2px outset $second-color-dark;
+						&:hover {
+							background-color: $second-color-dark;
+						}
+						&:active {
+							background-color: $second-color-light;
+							border-bottom: none;
+							border-right: none;
+            }
+					}
+				}
+				&:hover:not(.home) {
+					background-color: $main-color-dark;
+					img {
+						transform: scale(1.4);
+						filter: brightness(0.7);
+					}
+        }
+        &:active:not(.home)  {
+          background-color: $main-color-light;
+        }
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 1360px) {
+	header {
+		.main-navbar {
+			margin: 0 1.2rem !important;
+			.title {
+				width: 100%;
+				margin: 0 0.5rem !important;
+				h2 {
+					font-size: 1.2rem !important;
+				}
+				img {
+					margin: 0 0.5rem !important;
+					width: 2rem !important;
+				}
+			}
+			.menu {
+				margin: 0 0.5rem !important;
+				.submenu {
+					a {
+						font-size: 0.8rem !important;
+						padding: 0 0.5rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	header .navbar .title span {
+		display: block;
+	}
+}

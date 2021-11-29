@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital@1&display=swap");
+$main-color: #004643;
+$main-color-dark: #023331;
+$main-color-darkp: #001e1d;
+$main-color-light: #005e59;
+$main-color-lightl: #018079;
+$second-color: #f9bc60;
+$second-color-dark: #b98c47;
+$second-color-darkp: #8f6a33;
+$second-color-light: #ffca7b;
+$second-color-lightl: #fcd293;
+$white-color: #fffffe;
+$white-gray-color: #eeeeee;
+$bg-cards: #013b38;
+$third-color-lightl: #7fdad4;
+$third-color-light: #50c2ba;
+$third-color: #2eaca3;
+$third-color-dark: #119c92;
+$third-color-darkp: #037c74;
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: $white-gray-color;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $second-color-dark;
+	&:hover {
+		background: $second-color-darkp;
+	}
+}
+
+body {
+	font-size: 16px;
+}
