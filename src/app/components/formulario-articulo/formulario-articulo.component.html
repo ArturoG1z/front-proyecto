@@ -1,1 +1,123 @@
-<p>formulario-articulo works!</p>
+<main>
+  <div class="container articulo-form">
+    <div class="background">
+      <p *ngIf="status === 'success' || status === 'error'">
+        {{
+          status === "success"
+            ? "Se registro el articulo"
+            : "Error al registrar el articulo"
+        }}
+      </p>
+      <form #articuloForm="ngForm" (ngSubmit)="onSubmit(articuloForm)">
+        <h2 class="text-center p-4">{{ titulo }}</h2>
+        <p>
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            #name="ngModel"
+            [(ngModel)]="articulo.nombre"
+            class="form-control"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="resumen" class="form-label">Resumen del producto</label>
+          <input
+            type="text"
+            name="resumen"
+            #resumen="ngModel"
+            [(ngModel)]="articulo.resumen"
+            class="form-control"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="descripcion" class="form-label">Descripcion</label>
+          <textarea
+            name="descripcion"
+            #descripcion="ngModel"
+            [(ngModel)]="articulo.descripcion"
+            class="form-control"
+            required
+          ></textarea>
+        </p>
+
+        <p>
+          <label for="codigo" class="form-label">Código</label>
+          <input
+            type="text"
+            name="codigo"
+            #codigo="ngModel"
+            [(ngModel)]="articulo.codigo"
+            class="form-control"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="precio" class="form-label">Precio</label>
+          <input
+            type="number"
+            name="precio"
+            #precio="ngModel"
+            [(ngModel)]="articulo.precio"
+            class="form-control"
+            min="0.01"
+            step="0.01"
+            max="999999999999.99"
+            placeholder='0.00'
+            required
+          />
+        </p>
+
+        <p>
+          <label for="stock" class="form-label">Stock</label>
+          <input
+            type="number"
+            name="stock"
+            #stock="ngModel"
+            [(ngModel)]="articulo.stock"
+            class="form-control"
+            min="0"
+            step="1"
+            max="999999999999"
+            placeholder='0'
+            required
+          />
+        </p>
+
+        <p>
+          <label for="categoria" class="form-label">Categoria</label>
+          <input
+            type="text"
+            name="categoria"
+            #categoria="ngModel"
+            [(ngModel)]="articulo.categoria"
+            class="form-control"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="imagen" class="form-label">Imagen</label>
+          <input
+            type="file"
+            name="imagen"
+            class="form-control"
+            (change)="fileChangeEvent($event)"
+          />
+        </p>
+        <button
+          type="submit"
+          class="btn btnAriculo"
+          [disabled]="!articuloForm.form.valid"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</main>

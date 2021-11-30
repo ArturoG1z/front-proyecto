@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminpanelComponent } from './adminpanel.component';
+import { CarrouselComponent } from './carrousel.component';
 
-describe('AdminpanelComponent', () => {
-  let component: AdminpanelComponent;
-  let fixture: ComponentFixture<AdminpanelComponent>;
+describe('CarrouselComponent', () => {
+  let component: CarrouselComponent;
+  let fixture: ComponentFixture<CarrouselComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminpanelComponent ]
+      declarations: [ CarrouselComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminpanelComponent);
+    fixture = TestBed.createComponent(CarrouselComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

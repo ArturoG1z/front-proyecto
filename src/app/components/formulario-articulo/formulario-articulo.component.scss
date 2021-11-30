@@ -1,0 +1,37 @@
+* {
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+main {
+  background: -webkit-linear-gradient(left, #e1f3ef, #83aca2);
+}
+.articulo-form {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 70%;
+  .background {
+    background: #fff;
+    border-radius: 20px;
+  }
+  .form-control {
+    border-radius: .5rem;
+  }
+  form {
+    padding: 3rem 5rem;
+  }
+  .btnAriculo {
+    width: 100%;
+    border: none;
+    border-radius: .5rem;
+    padding: 1.5%;
+    background: #f9bc60;
+    font-weight: 600;
+    color: #004643;
+    cursor: pointer;
+    border-bottom: 2px solid #f9bc60;
+    &:hover {
+      background: #fcd293;
+      border: 0px solid #f9bc60;
+    }
+  }
+}

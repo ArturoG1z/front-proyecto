@@ -40,4 +40,11 @@ export class ArticuloService {
 
     return this.http.patch(this.url + 'articulos/' + articulo._id, params, {headers: headers});
   }
+
+  deleteArticulo(articulo: Articulo): Observable<any> {
+    let params = JSON.stringify(articulo);
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    
+    return this.http.delete(this.url + 'articulos/' + articulo._id, {headers: headers});
+  }
 }

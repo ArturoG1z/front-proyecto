@@ -1,1 +1,44 @@
-<p>articulos works!</p>
+<main class="p-5">
+  <div class="container articulos-table p-5 background">
+    <div class="">
+      <h2>{{ titulo }}</h2>
+      <table class="table table-responsive table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Codigo</th>
+            <th>Stock</th>
+            <th>Categoria</th>
+            <th class="text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let articulo of articulos">
+            <td>{{ articulo.nombre }}</td>
+            <td>{{ articulo.precio }}</td>
+            <td>{{ articulo.codigo }}</td>
+            <td>{{ articulo.stock }}</td>
+            <td>{{ articulo.categoria }}</td>
+            <td class="d-flex justify-content-between">
+              <a class="btn btn-sm btn-primary" [routerLink]="['/articulo', articulo._id]">
+                <i class="fa fa-eye"></i> Ver
+              </a>
+              <a class="btn btn-sm btn-primary" [routerLink]="['/actualizar-articulo', articulo._id]">
+                <i class="fas fa-edit"></i> Editar
+              </a>
+              <button class="btn btn-sm btn-danger" (click)="borrarArticulo(articulo)">
+                <i class="fas fa-trash"></i> Borrar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-end">
+        <a href="/registrar-articulo" class="btn btn-success">
+          <i class="fas fa-plus"></i>  Registrar nuevo articulo
+        </a>
+      </div>
+    </div>
+  </div>
+</main>

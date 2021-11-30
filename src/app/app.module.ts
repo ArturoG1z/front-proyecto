@@ -9,9 +9,13 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { AboutComponent } from './components/about/about.component';
-import { AdminpanelComponent } from './components/adminpanel/adminpanel.component';
 import { FormularioArticuloComponent } from './components/formulario-articulo/formulario-articulo.component';
 import { ArticulosComponent } from './components/articulos/articulos.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ArticuloComponent } from './components/articulo/articulo.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,15 +26,18 @@ import { ArticulosComponent } from './components/articulos/articulos.component';
     TiendaComponent,
     ContactoComponent,
     AboutComponent,
-    AdminpanelComponent,
     FormularioArticuloComponent,
-    ArticulosComponent
+    ArticulosComponent,
+    CarrouselComponent,
+    ArticuloComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

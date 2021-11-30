@@ -1,0 +1,77 @@
+<main class="bg-own">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="p-5 card">
+          <i class="fas fa-store"></i>
+          <div class="about-product text-center mt-2">
+            <img
+              src="{{ url + 'articulos/image/get/' + articulo.imagen }}"
+              *ngIf="articulo.imagen"
+              width="200"
+            />
+            <div>
+              <h4>{{ articulo.nombre }}</h4>
+              <h6 class="mt-0 text-black-50">{{ articulo.resumen }}</h6>
+            </div>
+          </div>
+          <p class="text-justify" [innerHTML]="descripcionConSaltos"></p>
+          <div class="stats mt-2">
+            <div class="d-flex justify-content-between p-price">
+              <span>Codigo</span><span>{{ articulo.codigo }}</span>
+            </div>
+            <div class="d-flex justify-content-between p-price">
+              <span>Cantidad en stock</span><span>{{ articulo.stock }}</span>
+            </div>
+            <div class="d-flex justify-content-between p-price">
+              <span>Categoria</span><span>{{ articulo.categoria }}</span>
+            </div>
+          </div>
+          <div
+            class="d-flex justify-content-between total font-weight-bold mt-4"
+          >
+            <span>Precio</span><span>{{ articulo.precio | currency }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card px-4 py-5">
+          <div class="d-flex justify-content-between my-3">
+            <span>Total en el carrito</span
+            ><span>{{ totalCarrito | currency }}</span>
+          </div>
+          <div class="d-flex justify-content-between my-3">
+            <span>Precio articulo</span
+            ><span>{{ articulo.precio | currency }}</span>
+          </div>
+          <div class="d-flex justify-content-between my-3">
+            <span>Envio</span><span>$0.00</span>
+          </div>
+          <label for="cantidad" class="form-label">Cantidad</label>
+          <input
+            type="number"
+            name="cantidad"
+            class="form-control my-3"
+            placeholder="Cantidad"
+            [(ngModel)]="cantidad"
+            min="1"
+            max="{{ articulo.stock }}"
+          />
+
+          <div class="d-flex justify-content-between my-3">
+            <span>Total</span
+            ><span>{{ articulo.precio * cantidad | currency }}</span>
+          </div>
+          <button
+            class="btn btn-primary"
+            (click)="addToCart(articulo)"
+            [disabled]="cantidad < 1 || cantidad > articulo.stock"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            <span> Agregar al carrito</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
