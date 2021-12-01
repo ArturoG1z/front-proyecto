@@ -98,9 +98,8 @@ export class FormularioArticuloComponent implements OnInit {
   }
 
   onSubmitResponse(response: any, form: NgForm) {
-    console.log({response, hola: 'hola'});
     if (response.articulo) {
-      if (this.filesToUpload) {
+      if (this.filesToUpload.length > 0) {
         this._uploadService
           .makeFileRequest(
             this.url + 'articulos/image/' + response.articulo._id,
